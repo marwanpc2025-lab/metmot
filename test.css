@@ -1,0 +1,77 @@
+/* ====== تنسيق عام للصفحة ====== */
+body {
+    margin: 0; /* إزالة المسافات الافتراضية */
+    font-family: Arial, sans-serif; /* نوع الخط */
+}
+
+/* ====== الهيدر ====== */
+.header {
+    display: flex; /* ترتيب العناصر جنب بعض */
+    justify-content: space-between; /* مسافة بين اللوجو والمنيو */
+    align-items: center; /* توسيط عمودي */
+    padding: 15px 20px; /* مسافة داخلية */
+    background-color: #111; /* لون خلفية الهيدر */
+    color: white; /* لون النص */
+    position: relative; /* علشان المنيو تتحدد بالنسبة له */
+}
+
+/* ====== اللوجو ====== */
+.logo {
+    font-size: 20px; /* حجم الخط */
+    font-weight: bold; /* تخانة الخط */
+}
+
+/* ====== إخفاء الـ checkbox ====== */
+#menu-toggle {
+    display: none; /* إخفاء العنصر */
+}
+
+/* ====== زر الثلاث شرط ====== */
+.menu-icon {
+    width: 30px; /* عرض الزر */
+    cursor: pointer; /* شكل الماوس */
+    display: flex; /* ترتيب الشرط */
+    flex-direction: column; /* الشرط فوق بعض */
+    gap: 6px; /* مسافة بين كل شرط */
+}
+
+/* ====== شكل كل شرط ====== */
+.menu-icon span {
+    height: 3px; /* سمك الشرط */
+    background-color: white; /* لون الشرط */
+    border-radius: 5px; /* تدوير الحواف */
+    transition: 0.3s; /* حركة ناعمة */
+}
+
+/* ====== القائمة ====== */
+.menu {
+    position: absolute; /* تحديد مكانها */
+    top: 60px; /* تحت الهيدر */
+    right: 20px; /* على اليمين */
+    background-color: #222; /* لون الخلفية */
+    width: 180px; /* عرض القائمة */
+    display: none; /* مخفية في البداية */
+    flex-direction: column; /* العناصر تحت بعض */
+    border-radius: 8px; /* تدوير الحواف */
+    overflow: hidden; /* إخفاء أي زيادة */
+}
+
+/* ====== روابط القائمة ====== */
+.menu a {
+    padding: 12px; /* مسافة داخلية */
+    text-decoration: none; /* إزالة الخط */
+    color: white; /* لون النص */
+    border-bottom: 1px solid #333; /* خط بين العناصر */
+    transition: 0.3s; /* حركة ناعمة */
+}
+
+/* ====== تأثير hover ====== */
+.menu a:hover {
+    background-color: #444; /* تغيير الخلفية */
+}
+
+/* ====== إظهار القائمة عند الضغط ====== */
+#menu-toggle:checked + .menu-icon + .menu {
+    display: flex; /* إظهار القائمة */
+}
+
