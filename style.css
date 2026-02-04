@@ -1,0 +1,686 @@
+/* ===== إعدادات عامة للموقع ===== */
+* {
+    box-sizing: border-box; /* يخلي الحسابات مظبوطة (padding + width) */
+    margin: 0; /* يلغي المسافات الافتراضية */
+    padding: 0;
+    font-family: 'Cairo', sans-serif; /* الخط المستخدم في الموقع */
+}
+
+/* ===== إعدادات الجسم ===== */
+body {
+    background-color: #ffffff; /* لون خلفية الموقع أبيض */
+    color: #000000; /* لون النص أسود */
+     /* اتجاه الكتابة من اليمين لليسار */
+}
+
+/* ====== الهيدر ====== */
+.header {
+    display: flex; /* ترتيب العناصر جنب بعض */
+    justify-content: space-between; /* مسافة بين اللوجو والمنيو */
+    align-items: center; /* توسيط عمودي */
+    padding: 15px 20px; /* مسافة داخلية */
+    background-color: rgb(255, 255, 255); /* لون خلفية الهيدر */
+    color: rgb(0, 0, 0); /* لون النص */
+    position: relative; /* علشان المنيو تتحدد بالنسبة له */
+    border-bottom: 5px solid #915e35; /* خط خفيف تحت الهيدر */
+
+}
+
+/* ====== اللوجو ====== */
+.logo {
+    margin-right: auto;
+    font-size: 20px; /* حجم الخط */
+    font-weight: bold; /* تخانة الخط */
+}
+
+/* ===== اللوجو ===== */
+.logo {
+    display: flex; /* الصورة والنص جنب بعض */
+    align-items: flex-start;
+    gap: 300px; /* مسافة بين الصورة والنص */
+}
+
+.logo img {
+    width: 150px;
+    height: 40px;
+    align-items: flex-start;
+}
+
+.mo{
+    font-size: xx-large;
+    color: #915e35;
+    margin-right: 10px;
+    font-family: "Alex Brush", cursive;
+    font-weight: bold;
+}
+
+/* ====== إخفاء الـ checkbox ====== */
+#menu-toggle {
+    display: none; /* إخفاء العنصر */
+}
+
+/* ====== زر الثلاث شرط ====== */
+.menu-icon {
+    width: 25px; /* عرض الزر */
+    cursor: pointer; /* شكل الماوس */
+    display: flex; /* ترتيب الشرط */
+    flex-direction: column; /* الشرط فوق بعض */
+    gap: 6px; /* مسافة بين كل شرط */
+}
+
+/* ====== شكل كل شرط ====== */
+.menu-icon span {
+    height: 3px; /* سمك الشرط */
+    background-color: #915e35; /* لون الشرط */
+    border-radius: 10px; /* تدوير الحواف */
+    transition: 0.3s; /* حركة ناعمة */
+}
+
+/* ====== القائمة ====== */
+.menu {
+    position: absolute; /* تحديد مكانها */
+    top: 60px; /* تحت الهيدر */
+    right: 20px; /* على اليمين */
+    background-color: #915e35; /* لون الخلفية */
+    width: 180px; /* عرض القائمة */
+    display: none; /* مخفية في البداية */
+    flex-direction: column; /* العناصر تحت بعض */
+    border-radius: 8px; /* تدوير الحواف */
+    overflow: hidden; /* إخفاء أي زيادة */
+}
+
+/* ====== روابط القائمة ====== */
+.menu a {
+    font-family: "Alex Brush", cursive;
+    font-weight: 600;
+    font-size: x-large;
+    padding: 12px; /* مسافة داخلية */
+    text-decoration: none; /* إزالة الخط */
+    color: rgb(0, 0, 0); /* لون النص */
+    border-bottom: 1px solid #000000(255, 0, 0); /* خط بين العناصر */
+    transition: 0.3s; /* حركة ناعمة */
+}
+
+/* ====== تأثير hover ====== */
+.menu a:hover {
+    background-color: #ffffff; /* تغيير الخلفية */
+}
+
+/* ====== إظهار القائمة عند الضغط ====== */
+#menu-toggle:checked + .menu-icon + .menu {
+    display: flex; /* إظهار القائمة */
+}
+
+/* ====== الكونتينر بتاع السلايدر ====== */
+.slider {
+    width: 100%;            /* عرض السلايدر بعرض الصفحة */
+    max-width: 900px;       /* أقصى عرض */
+    height: 400px;          /* ارتفاع السلايدر */
+    margin: 260px auto;      /* توسيط السلايدر + مسافة من فوق */
+    position: relative;     /* علشان نتحكم في الصور */
+    overflow: hidden;       /* إخفاء أي جزء خارج السلايدر */
+    border-radius: 15px;    /* تدوير الحواف */
+}
+
+/* ====== الصور ====== */
+.slide {
+    width: 100%;            /* الصورة تاخد عرض السلايدر */
+    height: 100%;           /* الصورة تاخد ارتفاع السلايدر */
+    object-fit: cover;      /* ملء الصورة بدون تشويه */
+    position: absolute;     /* علشان الصور تبقى فوق بعض */
+    top: 0;                 /* من أعلى */
+    left: 0;                /* من الشمال */
+    opacity: 0;             /* الصورة مخفية */
+    transition: opacity 1s ease-in-out; /* تأثير ناعم */
+}
+
+/* ====== الصورة اللي شغالة ====== */
+.slide.active {
+    opacity: 1;             /* إظهار الصورة */
+}
+
+/*المنيو لورينزا*/
+.menu-tabs {
+    width: 90%;
+    margin: 0 auto;         /* 10% فاضي على الشمال واليمين */
+    padding: 0px 0;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    font-size: x-large;
+    font-weight: 900;
+    padding: 10px 15px;
+    font-family: "Alex Brush", cursive;
+    border: none;
+    color: #915e35;
+    background-color: #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    color: #000000;
+    font-size: xx-large;
+    font-weight: 900;
+    font-family: "Alex Brush", cursive;
+}
+
+.tab-content {
+    display: none;          /* كل المحتوى مخفي في البداية */
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.tab-content.active {
+    display: block;         /* يظهر لما تختار الفئة */
+}
+
+
+
+
+
+
+/* الكلمة تحت الخط */
+.menuz-title {
+    font-family: "Alex Brush", cursive;
+    text-align: center;
+    font-size: 36px;
+    color: #915e35;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+}
+
+/* ===== MENU SECTION ===== */
+.menuz {
+    max-width: 1300px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.menuz h2 {
+    color: #915e35;
+    font-weight: bold;
+    font-family: "Alex Brush", cursive;
+    font-size: 45px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+.card p {
+    font-family: "Alex Brush", cursive;
+    color: #966e4e;
+    margin-right: 35%;
+    margin-bottom: 15px;
+}
+
+/* ===== ITEMS ===== */
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* ===== CARD ===== */
+.card {
+    color: aliceblue;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #915e35;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #915e35;
+    font-family: "Alex Brush", cursive;
+
+}
+
+.card span {
+    font-family: "Alex Brush", cursive;
+    display: block;
+    margin: 0 5px 10px;
+    margin-left: 75%;
+    color: #915e35;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background: #000;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.dropdown-container {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.dropbtn {
+    background-color: #000000;
+    color: rgb(197, 129, 3);
+    padding: 10px 15px;
+    font-size: 35px;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: "Alex Brush", cursive;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #222;
+    min-width: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-family: Arial, sans-serif;
+}
+
+.dropdown-content a:hover {
+    background-color: #9b5e03;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.alex-brush-regular {
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*//////////////////////////////////////*/
+
+/* ====== HEADER ====== */
+.header {
+    font-size: x-large;
+    display: flex;              /* يخلي العناصر جنب بعض */
+    justify-content: space-between; /* واحد شمال وواحد يمين */
+    align-items: center;        /* توسيط عمودي */
+    padding: 15px 30px;         /* مسافة داخلية */
+    background-color: #ffffff;  /* لون الهيدر */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* ظل خفيف */
+}
+
+/* ====== LOGO ====== */
+.logo h2 {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 0;
+    font-size: 22px;            /* حجم الخط */
+    color: #333;                /* لون النص */
+}
+
+/* ====== WHATSAPP BUTTON ====== */
+.whatsapp-btn {
+    background-color: #000000;
+    font-family: "Alex Brush", cursive;    /*fon*/
+    font-size: x-large;
+    margin-right: 20px;
+    text-decoration: none;      /* إزالة الخط تحت اللينك */
+    color: #915e35;                /* لون النص */
+    padding: 10px 18px;         /* حجم الزر */
+    border-radius: 25px;        /* يخليه مدوّر */
+    font-weight: bold;          /* خط تقيل */
+    transition: 0.3s;           /* نعومة الحركة */
+}
+
+
+/* ====== HOVER EFFECT ====== */
+.whatsapp-btn:hover {
+    font-family: "Alex Brush", cursive;
+    font-size: x-large;
+    color: #915e35;  /* لون أغمق عند المرور */
+    transform: scale(1.05);     /* تكبير بسيط */
+}
+
+/*//////////////////////////////////////////////*/
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    background: url("lolo.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.55);
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    padding-top: 120px;
+}
+
+/* ===== TEXT ===== */
+.sub-title {
+    font-family: "Alex Brush", cursive;
+    color: #ffffff;
+    font-size: 22px;
+    margin-top: 100px;
+    font-weight: 60px;
+}
+
+.title {
+    font-family: "Alex Brush", cursive;
+    color: #915e35;
+    font-size: 80px;
+    margin: 10px 0;
+}
+
+.desc {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ===== SOCIAL ===== */
+.social {
+    margin-top: 30px;
+}
+
+.social a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* ===== BOTTOM BAR ===== */
+.bottom-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.menu-btn,
+.book-btn {
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.menu-btn {
+    background: #fff;
+    color: rgb(255, 0, 0);
+}
+
+.book-btn {
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== BOTTOM BAR ===== */
+.bottom-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ===== الزر الكبير ===== */
+.main-button {
+    font-family: "Alex Brush", cursive;
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden; /* عشان الزرين جوه ياخدوا نفس الشكل */
+    background-color: #319128; /* لون الزر الكبير */
+    box-shadow: 0 4px 12px #915e35(255, 0, 0, 0.2);
+}
+
+/* ===== الزرين جوا ===== */
+.inner-btn {
+    overflow: hidden; /* عشان الزرين جوه ياخدوا نفس الشكل */
+    font-family: "Alex Brush", cursive;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #915e35;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    background-color: #ffffff; /* نفس لون الزر الكبير */
+    transition: 0.3s;
+}
+
+.inner-btn:last-child {
+    border-right: none; /* آخر زر بدون خط */
+}
+
+/* ===== تأثير Hover ===== */
+.inner-btn:hover {
+    background-color: #000000; /* لون أغمق عند المرور */
+    border-radius: 40px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+/* ===== BOTTOM BAR ===== */
+.bottom-bar {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+}
+
+/* ===== الزر الكبير ===== */
+.main-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    padding: 1px 10px;
+    border-radius: 40px;    /*الكيرف الديره*/
+}
+
+/* ===== زر Menu و Book ===== */
+.inner-btn {
+    justify-content: center;       /*اي حاجة في النص*/
+    padding: 1px 22px;
+    text-decoration: none;
+    color: #915e35;
+    font-weight: bold;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* ===== زر Menu و Book ===== */
+.test {
+    justify-content: center;       /*اي حاجة في النص*/
+    border-radius: 40px;
+    font-family: "Alex Brush", cursive;    /*fon*/
+    background-color: #000;
+    padding: 6px 22px;
+    text-decoration: none;
+    color: #915e35;
+    font-weight: bold;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* ===== wrapper بتاع ☰ ===== */
+.menuh-wrapper {
+    position: relative;
+}
+
+/* نخفي checkbox */
+#menuh-toggle {
+    display: none;
+}
+
+/* أيقونة الثلاث شرط */
+.menuh-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+    padding: 14px;
+    font-size: 10%;
+}
+
+.menuh-icon span {  /*لون الثلث شروط*/
+    width: 20px;
+    height: 2px;
+    background: #915e35;
+}
+
+/* ===== القائمة ===== */
+.menuh {
+    font-family: "Alex Brush", cursive;    /*fon*/
+    position: absolute;
+    bottom: 40px; /* تطلع لفوق */
+    left: 20%;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    min-width: 160px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* عناصر القائمة */
+.menuh a {
+    font-family: "Alex Brush", cursive;    /*fon*/
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.menuh a:hover {  /*الاوان عند المرور في القائمة*/
+    color: #000000;
+}
+
+/* فتح القائمة */
+#menuh-toggle:checked + .menuh-icon + .menuh {
+    display: flex;
+}
+
+
+
+.social {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    justify-content: center;       /*اي حاجة في النص*/
+}
+
+.social a {
+    width: 70px;
+    height: 70px;
+    background: rgba(0,0,0,0.6);
+    color: #915e35; /* بني دهبي زي اللوجو */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background: #915e35;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
